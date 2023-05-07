@@ -16,19 +16,19 @@ def screenXO(screen):
 
     
     corners = {
-               "upperLeft":     "┌",    #218 np. chr(218)
-               "upperRight":    "┐",    #191
-               "mediumLeft":    "├",    #195 
-               "mediumRight":   "┤",    #180
-               "bottomLeft":    "└",    #192
-               "bottomRight":   "┘",    #217
-               "upperMid":      "┬",    #194
-               "midiumMid":     "┼",    #197
-               "bottomMid":     "┴"     #193
+               "upperLeft":     "┌",  
+               "upperRight":    "┐",  
+               "mediumLeft":    "├",  
+               "mediumRight":   "┤",  
+               "bottomLeft":    "└",  
+               "bottomRight":   "┘",  
+               "upperMid":      "┬",  
+               "midiumMid":     "┼",  
+               "bottomMid":     "┴"   
               }
     lines =   {
-               "vertical": "│",         #179
-               "horizontal": "─"        #196
+               "vertical": "│",       
+               "horizontal": "─"      
               }
     
     size = len(screen)               
