@@ -74,3 +74,13 @@ if __name__ == "__main__":
         y = int(input("Podaj wsp y: "))
         dane[y][x] = gracz
         gracz *= -1
+        if dane[0][0] == dane[0][1] == dane[0][2] == 1 or dane[1][0] == dane[1][1] == dane[1][2] == 1 or dane[2][0] == dane[2][1] == dane[2][2] == 1 or dane[0][0] == dane[1][0] == dane[2][0] == 1 or dane[0][1] == dane[1][1] == dane[2][1] == 1 or dane[0][2] == dane[1][2] == dane[2][2] == 1 or dane[0][0] == dane[1][1] == dane[2][2] == 1 or dane[0][2] == dane[1][1] == dane[2][0] == 1: 
+            screenXO(dane)
+            printGreen("Gracz X wygrał")
+            break
+        elif dane[0][0] == dane[0][1] == dane[0][2] == -1 or dane[1][0] == dane[1][1] == dane[1][2] == -1 or dane[2][0] == dane[2][1] == dane[2][2] == -1 or dane[0][0] == dane[1][0] == dane[2][0] == -1 or dane[0][1] == dane[1][1] == dane[2][1] == -1 or dane[0][2] == dane[1][2] == dane[2][2] == -1 or dane[0][0] == dane[1][1] == dane[2][2] == -1 or dane[0][2] == dane[1][1] == dane[2][0] == -1:
+            screenXO(dane)
+            printRed("Gracz O wygrał")
+            break
+        else: 
+            pass
