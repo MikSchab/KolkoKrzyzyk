@@ -1,5 +1,6 @@
 # Mikołaj Schab  Paweł Przybylski projekt python Kołko krzyzyk
 import os
+import time
 from colorama import Fore, Back
 
 def printWhite(data):
@@ -72,15 +73,25 @@ if __name__ == "__main__":
         else: printRed("Gracz 2\n")
         x = int(input("Podaj wsp x: "))
         y = int(input("Podaj wsp y: "))
-        dane[y][x] = gracz
-        gracz *= -1
-        if dane[0][0] == dane[0][1] == dane[0][2] == 1 or dane[1][0] == dane[1][1] == dane[1][2] == 1 or dane[2][0] == dane[2][1] == dane[2][2] == 1 or dane[0][0] == dane[1][0] == dane[2][0] == 1 or dane[0][1] == dane[1][1] == dane[2][1] == 1 or dane[0][2] == dane[1][2] == dane[2][2] == 1 or dane[0][0] == dane[1][1] == dane[2][2] == 1 or dane[0][2] == dane[1][1] == dane[2][0] == 1: 
+        if x>2 or x<0 or y>2 or y<0:
             screenXO(dane)
-            printGreen("Gracz X wygrał")
-            break
-        elif dane[0][0] == dane[0][1] == dane[0][2] == -1 or dane[1][0] == dane[1][1] == dane[1][2] == -1 or dane[2][0] == dane[2][1] == dane[2][2] == -1 or dane[0][0] == dane[1][0] == dane[2][0] == -1 or dane[0][1] == dane[1][1] == dane[2][1] == -1 or dane[0][2] == dane[1][2] == dane[2][2] == -1 or dane[0][0] == dane[1][1] == dane[2][2] == -1 or dane[0][2] == dane[1][1] == dane[2][0] == -1:
-            screenXO(dane)
-            printRed("Gracz O wygrał")
-            break
-        else: 
-            pass
+            printRed("Podaj poprawne współrzędne")
+            time.sleep(5)
+        else:
+            if dane[y][x] == -1 or dane[y][x] == 1:
+                screenXO(dane)
+                printRed("To miejsce jest zajete")
+                time.sleep(5)
+            else:
+                dane[y][x] = gracz
+                gracz *= -1
+                if dane[0][0] == dane[0][1] == dane[0][2] == 1 or dane[1][0] == dane[1][1] == dane[1][2] == 1 or dane[2][0] == dane[2][1] == dane[2][2] == 1 or dane[0][0] == dane[1][0] == dane[2][0] == 1 or dane[0][1] == dane[1][1] == dane[2][1] == 1 or dane[0][2] == dane[1][2] == dane[2][2] == 1 or dane[0][0] == dane[1][1] == dane[2][2] == 1 or dane[0][2] == dane[1][1] == dane[2][0] == 1: 
+                    screenXO(dane)
+                    printGreen("Gracz X wygrał")
+                    break
+                elif dane[0][0] == dane[0][1] == dane[0][2] == -1 or dane[1][0] == dane[1][1] == dane[1][2] == -1 or dane[2][0] == dane[2][1] == dane[2][2] == -1 or dane[0][0] == dane[1][0] == dane[2][0] == -1 or dane[0][1] == dane[1][1] == dane[2][1] == -1 or dane[0][2] == dane[1][2] == dane[2][2] == -1 or dane[0][0] == dane[1][1] == dane[2][2] == -1 or dane[0][2] == dane[1][1] == dane[2][0] == -1:
+                    screenXO(dane)
+                    printRed("Gracz O wygrał")
+                    break
+                else: 
+                    pass
