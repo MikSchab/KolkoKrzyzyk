@@ -1,4 +1,5 @@
 # Mikołaj Schab  Paweł Przybylski projekt python Kołko krzyzyk
+import random
 import os
 import time
 from colorama import Fore, Back
